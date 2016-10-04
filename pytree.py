@@ -3,9 +3,7 @@ import subprocess
 import sys
 import os
 
-
-
-def createTree(inputDirectory, indentLevel, numDirectories, numFiles):
+def createTree(inputDirectory,indentLevel,numDirectories,numFiles):
     files = os.listdir(inputDirectory)
     for index, file in enumerate(files):
         if (file[0] != "."):
@@ -21,7 +19,7 @@ def createTree(inputDirectory, indentLevel, numDirectories, numFiles):
 
     return numDirectories, numFiles
 
-def printIndent(index, files, indentLevel):
+def printIndent(index,files,indentLevel):
     if (index == len(files) - 1):
         print(indentLevel + '└── ' + files[index])
     else:
@@ -33,6 +31,6 @@ if __name__ == '__main__':
         inputDirectory = "."
     else:
         inputDirectory = sys.argv[1]
-    print (inputDirectory)
+    print(inputDirectory)
     numDirectories, numFiles = createTree(inputDirectory, "", 0, 0)
-    print ("\n" + str(numDirectories) + " directories, " + str(numFiles) + " files")
+    print("\n" + str(numDirectories) + " directories, " + str(numFiles) + " files")
